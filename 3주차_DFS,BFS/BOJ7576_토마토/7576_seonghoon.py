@@ -25,11 +25,15 @@ for _ in range(n):
 
     y += 1
 
+isAlreadyFull = True
 # 모든 토마토가 익어있는 상태면 answer = 0
 for row in box:
-    if 0 not in row:
-        print(0)
-        exit(0)
+    if 0 in row:
+        isAlreadyFull = False
+
+if isAlreadyFull:
+    print(0)
+    exit(0)
 
 while queue:
     x, y = queue.popleft()

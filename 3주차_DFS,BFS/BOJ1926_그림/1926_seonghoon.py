@@ -1,6 +1,7 @@
 
 ##### recursion으로 풀면 recursion runtime error가 나므로 DFS로 풀고싶으면 스택을 써야한다 #####
-
+import sys
+sys.setrecursionlimit(250000)
 
 x = 0; y = 0
 dx = [1, -1, 0, 0] # 동 서 남 북
