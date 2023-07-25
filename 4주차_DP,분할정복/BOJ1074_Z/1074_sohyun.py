@@ -1,5 +1,4 @@
-# Z 
-# 아직 미완성..
+# Z
 
 # 예제 예시보니 인덱스 값 r,c 인듯 0부터 시작 좌표식(r,c)
 
@@ -21,39 +20,32 @@ input = sys.stdin.readline
 
 def space(nn,r,c,count):
 
-    print(count)
 
-    if nn<2:
+    if nn<2: # 하나 남음
+        if r==0 and c == 0 :
+            count+=0
+        elif r==0 and c==1 :
+            count+=1
+        elif r==1 and c==0:
+            count+=2
+        elif r==1 and c==1:
+            count+=3
+        print(count)
         return count
 
     check_n = nn-1
     check_r = 2**check_n
 
-    if r==0 and c == 0 :
-        count+=0
-    elif r==0 and c==1 :
-        count+=1
-    elif r==1 and c==0:
-        count+=2
-    elif r==1 and c==1:
-        count+=3
-
-    
     if r < check_r and c < check_r: #A
-        print('A')
         space(check_n,r,c,count)
     elif r < check_r and c >= check_r: #B   
-        print('B')
-        space(check_n,r,c-2**check_n,check_r-1+count)
+        space(check_n,r,c-2**check_n,check_r**2+count)
     elif r >= check_r and c < check_r: #C
-        print('C')
-        space(check_n,r-2**check_n,c,2*check_r-1+count)
+        space(check_n,r-2**check_n,c,2*(check_r**2)+count)
     elif r >= check_r and c >= check_r:  #D 
-        print('D')
-        space(check_n,r-2**check_n,c-2**check_n,3*check_r+count)
+        space(check_n,r-2**check_n,c-2**check_n,3*(check_r**2)+count)
 
-    return count
+
 
 n,r,c = map(int,input().split())
-
-print(space(n,r,c,0))
+space(n,r,c,0)
