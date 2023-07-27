@@ -8,4 +8,5 @@ def cal(a, b, c):
     else:
         return ((cal(a, b//2, c) ** 2) * a) % c
 
+
 print(cal(a,b,c))

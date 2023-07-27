@@ -25,6 +25,6 @@ for i in range(n, 0, -1):
     else:
         # i일차에 상담을 하지 않을 경우 -> i+1일차에서의 최대이익
         # i일차에 상담을 할 경우 -> i일차의 이익 + i+t[i]일차의 최대이익
-        max_p[i] = max(max_p[i+1], max_p[i + t[i]] + p[i])\
+        max_p[i] = max(max_p[i+1], max_p[i + t[i]] + p[i])
 
 print(max_p[1])
