@@ -1,3 +1,4 @@
+# 범위와 기준을 잡는 것만 잘하면 구현은 어렵지 않은 
 def solution(n, times):
     answer = 0
     start, end = 1,max(times)*n # 최대 시간 값
