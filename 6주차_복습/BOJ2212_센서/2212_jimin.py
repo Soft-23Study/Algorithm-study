@@ -11,6 +11,6 @@ for i in range(len(sensors)-1):
 dist.sort()
 
 for _ in range(k-1):
-    dist.pop()
+    if len(dist)>0: dist.pop()
 
 print(sum(dist))
