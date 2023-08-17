@@ -21,7 +21,11 @@ for k in range(1, v+1):
           for b in range(1, v+1):
                if graph[a][k] + graph[k][b] < graph[a][b]:
                     graph[a][b] = min(graph[a][b], graph[a][k]+graph[k][b])
-
+for i in range(1, v+1):
+    for j in range(1, v+1):
+        if graph[i][j]==INF: print("INF", end=' ')
+        else: print(graph[i][j], end=' ')
+    print()
 for i in range(1, v+1):
     answer = min(answer, graph[i][i])
 
